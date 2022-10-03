@@ -1,0 +1,19 @@
+setor
+- id		guid
+- descricao	string(2000)
+- datacriacao	datatime(7)
+- inativo	boolean
+
+subsetor
+- id		guid
+- descricao	string(2000)
+- setorid	fk de setores
+- datacriacao	datatime(7)
+- inativo	boolean
+
+segmento
+- id		guid
+- descricao	string(100)
+- subsetorid	fk de subsetor
+- datacriacao	datatime(7)
+- inativo	boolean
