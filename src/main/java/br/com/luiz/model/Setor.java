@@ -1,15 +1,33 @@
 package br.com.luiz.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_setor")
 public class Setor implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(nullable = false, length = 2000)
 	private String descricao;
-	private String datacriacao;
+	
+	@Column(name = "data_criacao", nullable = false)
+	private Date datacriacao;
+	
+	@Column(nullable = false)
 	private Boolean inativo;
 	
 	public Setor() {}
@@ -30,11 +48,11 @@ public class Setor implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public String getDatacriacao() {
+	public Date getDatacriacao() {
 		return datacriacao;
 	}
 
-	public void setDatacriacao(String datacriacao) {
+	public void setDatacriacao(Date datacriacao) {
 		this.datacriacao = datacriacao;
 	}
 

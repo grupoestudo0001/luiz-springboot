@@ -30,7 +30,7 @@ public class SetorService {
 		Setor setor = new Setor();
 		setor.setId(0L);
 		setor.setDescricao("setor 1");
-		setor.setDatacriacao("01/01/2022");
+		setor.setDatacriacao(null);
 		setor.setInativo(true);
 		return setor;		
 	}
